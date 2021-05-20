@@ -12,6 +12,9 @@
 		1253FD452655FF940013AC09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253FD442655FF940013AC09 /* ViewController.swift */; };
 		1253FD4A2655FF960013AC09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1253FD492655FF960013AC09 /* Assets.xcassets */; };
 		1253FD4D2655FF960013AC09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1253FD4B2655FF960013AC09 /* LaunchScreen.storyboard */; };
+		1253FD5A265600D70013AC09 /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253FD59265600D70013AC09 /* ViewControllerViewModel.swift */; };
+		1253FD5E265601990013AC09 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253FD5D265601990013AC09 /* UserService.swift */; };
+		1253FD63265601AB0013AC09 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253FD62265601AB0013AC09 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		1253FD492655FF960013AC09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1253FD4C2655FF960013AC09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1253FD4E2655FF960013AC09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1253FD59265600D70013AC09 /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
+		1253FD5D265601990013AC09 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		1253FD62265601AB0013AC09 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		1253FD3F2655FF940013AC09 /* Combine_URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				1253FD602656019E0013AC09 /* Models */,
+				1253FD5C2656018D0013AC09 /* Services */,
+				1253FD58265600C50013AC09 /* ViewModels */,
+				1253FD562656009F0013AC09 /* ViewControllers */,
 				1253FD402655FF940013AC09 /* AppDelegate.swift */,
 				1253FD422655FF940013AC09 /* SceneDelegate.swift */,
-				1253FD442655FF940013AC09 /* ViewController.swift */,
 				1253FD492655FF960013AC09 /* Assets.xcassets */,
 				1253FD4B2655FF960013AC09 /* LaunchScreen.storyboard */,
 				1253FD4E2655FF960013AC09 /* Info.plist */,
 			);
 			path = Combine_URLSession;
+			sourceTree = "<group>";
+		};
+		1253FD562656009F0013AC09 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1253FD442655FF940013AC09 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1253FD58265600C50013AC09 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1253FD59265600D70013AC09 /* ViewControllerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1253FD5C2656018D0013AC09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1253FD5D265601990013AC09 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1253FD602656019E0013AC09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1253FD62265601AB0013AC09 /* Users.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1253FD452655FF940013AC09 /* ViewController.swift in Sources */,
+				1253FD5E265601990013AC09 /* UserService.swift in Sources */,
 				1253FD412655FF940013AC09 /* AppDelegate.swift in Sources */,
 				1253FD432655FF940013AC09 /* SceneDelegate.swift in Sources */,
+				1253FD63265601AB0013AC09 /* Users.swift in Sources */,
+				1253FD5A265600D70013AC09 /* ViewControllerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
