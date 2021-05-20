@@ -40,11 +40,13 @@ class ViewController: UIViewController {
         ])
 
         //MARK: User Subscription
-        viewModel.$users.sink { [weak self] _ in
-            DispatchQueue.main.async {
+        viewModel.$users
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                //By using the .receive operator and directing it to the main thread, we don't have to use
+                //a DispatchQueue.main.async block here. :D
                 self?.userTableView.reloadData()
-            }
-        }.store(in: &cancellables)
+            }.store(in: &cancellables)
 
     }
 
