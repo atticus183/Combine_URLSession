@@ -8,14 +8,12 @@
 import Combine
 import Foundation
 
-class ViewControllerViewModel {
-
-    let modelDidChange = PassthroughSubject<Void, Never>()
+final class ViewControllerViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
     let userService: UserService
 
-    var users: [Users] = []
+    @Published var users: [Users] = []
 
     init(userService: UserService = UserService()) {
         self.userService = userService
@@ -29,7 +27,6 @@ class ViewControllerViewModel {
             }
         } receiveValue: { [weak self] users in
             self?.users = users
-            self?.modelDidChange.send()
         }.store(in: &cancellables)
     }
 }

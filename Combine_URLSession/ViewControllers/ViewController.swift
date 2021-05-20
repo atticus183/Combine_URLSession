@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         ])
 
         //MARK: User Subscription
-        viewModel.modelDidChange.sink { [weak self] _ in
+        viewModel.$users.sink { [weak self] _ in
             DispatchQueue.main.async {
                 self?.userTableView.reloadData()
             }
