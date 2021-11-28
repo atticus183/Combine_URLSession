@@ -10,8 +10,9 @@ import Foundation
 
 final class ViewControllerViewModel: ObservableObject {
 
-    private var cancellables = Set<AnyCancellable>()
-    let userService: UserService
+    private var cancellables: Set<AnyCancellable> = []
+
+    private let userService: UserService
 
     @Published var users: [Users] = []
 

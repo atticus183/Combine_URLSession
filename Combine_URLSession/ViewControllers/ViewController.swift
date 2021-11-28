@@ -8,13 +8,13 @@
 import Combine
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
-    let viewModel = ViewControllerViewModel()
+    private let viewModel = ViewControllerViewModel()
 
-    private var cancellables = Set<AnyCancellable>()
+    private var cancellables: Set<AnyCancellable> = []
 
-    let userTableView: UITableView = {
+    private let userTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +47,6 @@ class ViewController: UIViewController {
                 //a DispatchQueue.main.async block here. :D
                 self?.userTableView.reloadData()
             }.store(in: &cancellables)
-
     }
 
 }

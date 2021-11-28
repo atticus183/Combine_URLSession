@@ -8,22 +8,23 @@
 import Combine
 import Foundation
 
-class UserService {
-    let userEndpointString = "https://jsonplaceholder.typicode.com/users"
+protocol UserServiceProtocol {
+    func userPublisher() -> AnyPublisher<[Users], Error>
+}
 
-    var userEndpointURL: URL {
+final class UserService: UserServiceProtocol {
+    private let userEndpointString = "https://jsonplaceholder.typicode.com/users"
+
+    private var userEndpointURL: URL {
         URL(string: userEndpointString)!
     }
 
-    var jsonDecoder: JSONDecoder {
-        JSONDecoder()
-    }
-    
+    private let jsonDecoder = JSONDecoder()
+
     func userPublisher() -> AnyPublisher<[Users], Error> {
         return URLSession.shared.dataTaskPublisher(for: userEndpointURL)
             .map { $0.data }
             .decode(type: [Users].self, decoder: jsonDecoder)
             .eraseToAnyPublisher()
     }
-    
 }
